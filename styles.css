@@ -1,1 +1,85 @@
+/* -------------------------
+   Body - Center calculator
+------------------------- */
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;               /* full viewport height */
+  background-color: #d3d3d3;   /* light grey background */
+  margin: 0;                    /* remove default body margin */
+  font-family: Arial, sans-serif;
+}
 
+/* -------------------------
+   Calculator Container
+------------------------- */
+.calculator {
+  width: 90%;                   /* responsive width on small screens */
+  max-width: 400px;             /* cap for large screens */
+  background-color: #f0f0f0;    
+  border-radius: 15px;          
+  box-shadow: 0px 5px 15px rgba(0,0,0,0.2); 
+  padding: 20px;
+  display: flex;
+  flex-direction: column;       
+  gap: 20px;                    
+}
+
+/* -------------------------
+   Display
+------------------------- */
+#display {
+  background-color: #222;       
+  color: #fff;                  
+  text-align: right;            
+  font-size: clamp(1.5rem, 4vw, 2rem);  /* scales on screen width */
+  padding: 15px;
+  border-radius: 10px;
+  box-shadow: inset 0px -2px 5px rgba(0,0,0,0.3); 
+  overflow-x: auto;             
+}
+
+/* -------------------------
+   Button Rows
+------------------------- */
+.button-row {
+  display: flex;
+  gap: 10px;                    
+}
+
+/* -------------------------
+   Buttons (Numbers & Operators)
+------------------------- */
+button {
+  flex: 1;                       
+  height: clamp(40px, 10vw, 60px);   /* scales with viewport width */
+  border: none;
+  border-radius: 8px;
+  font-size: clamp(1rem, 3vw, 1.5rem); /* responsive font size */
+  cursor: pointer;
+  transition: transform 0.1s, background-color 0.1s; 
+}
+
+/* Number Buttons */
+button.number {
+  background-color: #fff;
+  color: #000;
+}
+
+/* Operator Buttons */
+button.operator {
+  background-color: #000;
+  color: #fff;
+  font-weight: bold;
+}
+
+/* Hover Effects */
+button:hover {
+  filter: brightness(1.1); 
+}
+
+/* Active (Pressed) Effect */
+button:active {
+  transform: scale(0.95);
+}
